@@ -126,3 +126,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetBehavior
   scoreValue: 10
+  explosionSound: {fileID: 8300000, guid: 5f457ff86691f7849868b248a73658ef, type: 3}

@@ -2,31 +2,35 @@ using UnityEngine;
 
 public class TargetSpawner : MonoBehaviour
 {
-    public GameObject targetPrefab;
-    
-    // How often a new target appears (in seconds)
+    // The [] brackets turn this into a list in the Inspector!
+    public GameObject[] targetPrefabs; 
     public float spawnRate = 2f; 
-
-    // The invisible box area where targets are allowed to spawn
     public Vector3 spawnAreaSize = new Vector3(10f, 4f, 5f);
     public Transform spawnCenter;
+    public int maxTargetsOnScreen = 6; 
 
     void Start()
     {
-        // Starts a repeating timer that calls the SpawnTarget function
         InvokeRepeating("SpawnTarget", 2f, spawnRate);
     }
 
     void SpawnTarget()
     {
-        // Generate random X, Y, and Z coordinates within our defined area
+        TargetBehavior[] currentTargets = FindObjectsOfType<TargetBehavior>();
+        
+        if (currentTargets.Length >= maxTargetsOnScreen)
+        {
+            return; 
+        }
+
         float randomX = Random.Range(-spawnAreaSize.x / 2, spawnAreaSize.x / 2);
         float randomY = Random.Range(-spawnAreaSize.y / 2, spawnAreaSize.y / 2);
         float randomZ = Random.Range(-spawnAreaSize.z / 2, spawnAreaSize.z / 2);
 
         Vector3 randomPosition = spawnCenter.position + new Vector3(randomX, randomY, randomZ);
-
-        // Create the target at that random position
-        Instantiate(targetPrefab, randomPosition, Quaternion.identity);
+        
+        // Pick a random box from the list
+        int randomIndex = Random.Range(0, targetPrefabs.Length);
+        Instantiate(targetPrefabs[randomIndex], randomPosition, Quaternion.identity);
     }
 }
