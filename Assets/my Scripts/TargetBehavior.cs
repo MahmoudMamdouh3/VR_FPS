@@ -7,13 +7,12 @@ public class TargetBehavior : MonoBehaviour
     // Changed from OnCollisionEnter to OnTriggerEnter
     private void OnTriggerEnter(Collider other)
     {
-        // Unity adds "(Clone)" to the end of spawned bullets, so we use .Contains
         if (other.gameObject.name.Contains("Bullet"))
         {
-            // 1. Destroy the bullet
+            // Find the ScoreManager in the scene and send it the points!
+            FindObjectOfType<ScoreManager>().AddScore(scoreValue);
+
             Destroy(other.gameObject);
-            
-            // 2. Destroy this target box
             Destroy(gameObject);
         }
     }
