@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45f34498-ef01-495b-9b80-bb44ca4998aa" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UNITY-VR-PROJECT-MAHMOUD-MAMDOUH/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UNITY-VR-PROJECT-MAHMOUD-MAMDOUH/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/My Prefabs/SM_Prop_LargeSign_Burger_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/My Prefabs/SM_Prop_LargeSign_Burger_01.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/My Prefabs/SM_Prop_LargeSign_Popcorn_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/My Prefabs/SM_Prop_LargeSign_Popcorn_01.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/My Prefabs/SM_Prop_Soda_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/My Prefabs/SM_Prop_Soda_01.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/main scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/main scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/my Scripts/GameMenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/my Scripts/GameMenuManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/my Scripts/TargetBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/my Scripts/TargetBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/my Scripts/TargetSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/my Scripts/TargetSpawner.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +21,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/my Scripts/FloatingScore.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/my Scripts/ScoreManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -85,7 +94,7 @@
       <workItem from="1776000715183" duration="6205000" />
       <workItem from="1776025514038" duration="14000" />
       <workItem from="1776075858648" duration="1351000" />
-      <workItem from="1776098072851" duration="617000" />
+      <workItem from="1776098072851" duration="2593000" />
     </task>
     <servers />
   </component>

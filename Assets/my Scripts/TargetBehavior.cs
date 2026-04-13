@@ -7,6 +7,8 @@ public class TargetBehavior : MonoBehaviour
     
     public AudioClip explosionSound; 
 
+    public GameObject floatingScorePrefab;
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name.Contains("Bullet"))
@@ -19,6 +21,21 @@ public class TargetBehavior : MonoBehaviour
             // Calculate the final score!
             int finalScore = scoreValue * scoreMultiplier;
             FindObjectOfType<ScoreManager>().AddScore(finalScore);
+            
+            // ==========================================
+// SPAWN THE FLOATING SCORE TEXT
+// ==========================================
+            if (floatingScorePrefab != null)
+            {
+                // Spawn the text exactly where the target is
+                GameObject popup = Instantiate(floatingScorePrefab, transform.position, Quaternion.identity);
+
+                // Send the score number to the text
+                popup.GetComponent<FloatingScore>().Setup(finalScore);
+            }
+// ==========================================
+            
+            
 
             Destroy(other.gameObject);
             Destroy(gameObject);

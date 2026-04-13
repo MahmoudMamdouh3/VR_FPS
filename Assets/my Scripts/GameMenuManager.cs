@@ -1,11 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class GameMenuManager : MonoBehaviour
 {
-    [Header("Game Objects")]
-    public GameObject gameManager; // The spawner
+    [Header("Scripts")]
+    public TargetSpawner spawnerScript; // ONLY pause the spawner, not the whole game!
     
     [Header("Menu Panels")]
     public GameObject mainMenuPanel;
@@ -13,8 +12,7 @@ public class GameMenuManager : MonoBehaviour
 
     void Start()
     {
-        // Pause the game when it starts
-        gameManager.SetActive(false); 
+        if (spawnerScript != null) spawnerScript.enabled = false; 
         mainMenuPanel.SetActive(true);
         settingsPanel.SetActive(false);
     }
@@ -22,7 +20,24 @@ public class GameMenuManager : MonoBehaviour
     public void StartGame()
     {
         mainMenuPanel.SetActive(false);
-        gameManager.SetActive(true); // Starts the spawner
+        if (spawnerScript != null) spawnerScript.enabled = true; 
+    }
+
+    // NEW: The Pause/Resume feature!
+    public void ToggleMenu()
+    {
+        // If the menu is hidden, show it and pause the spawner
+        if (mainMenuPanel.activeSelf == false)
+        {
+            mainMenuPanel.SetActive(true);
+            settingsPanel.SetActive(false); // Make sure settings isn't open
+            if (spawnerScript != null) spawnerScript.enabled = false;
+        }
+        else // If the menu is showing, hide it and resume the spawner
+        {
+            mainMenuPanel.SetActive(false);
+            if (spawnerScript != null) spawnerScript.enabled = true;
+        }
     }
 
     public void OpenSettings()
@@ -37,7 +52,6 @@ public class GameMenuManager : MonoBehaviour
         mainMenuPanel.SetActive(true);
     }
 
-    // Changes the global game volume
     public void SetVolume(float volume)
     {
         AudioListener.volume = volume; 
@@ -45,16 +59,12 @@ public class GameMenuManager : MonoBehaviour
 
     public void RestartGame()
     {
-        // Reloads the entire scene instantly
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
     }
     
     public void ExitGame()
     {
-        // This closes the app when built as an APK or EXE
         Application.Quit(); 
-        
-        // This just prints a message in the Unity Editor so you know the button works
         Debug.Log("Game is exiting!"); 
     }
 }

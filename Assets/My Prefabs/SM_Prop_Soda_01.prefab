@@ -129,3 +129,4 @@ MonoBehaviour:
   scoreValue: 10
   scoreMultiplier: 2
   explosionSound: {fileID: 8300000, guid: d35aea2736833b944831bf53362d335d, type: 3}
+  floatingScorePrefab: {fileID: 5786975213756072674, guid: a0c940f9bce2d2445971f4c49ca4842b, type: 3}
