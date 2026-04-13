@@ -48,4 +48,13 @@ public class GameMenuManager : MonoBehaviour
         // Reloads the entire scene instantly
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
     }
+    
+    public void ExitGame()
+    {
+        // This closes the app when built as an APK or EXE
+        Application.Quit(); 
+        
+        // This just prints a message in the Unity Editor so you know the button works
+        Debug.Log("Game is exiting!"); 
+    }
 }
